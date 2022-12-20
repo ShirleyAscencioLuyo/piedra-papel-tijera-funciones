@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Piedra, Papel o Tijera</title>
+    <script>
+        function jugar() {
+            // 1 es piedra | 2 es papel | 3 es tijera
+            let jugador = prompt("Elige 1 para ✊, Elige 2 para 🧻, Elige 3 para ✂️");
+            let pc = generarNumeroAleatorio(3);
+
+            mostrarOpcionSeleccionadaPorJugador(jugador);
+
+            mostrarOpcionSeleccionadaPorPC(pc);
+
+            mostrarGanador(jugador, pc);
+
+        }
+
+        function generarNumeroAleatorio(max) {
+            return Math.floor(Math.random() * max);
+        }
+
+        function mostrarOpcionSeleccionadaPorJugador(jugador) {
+            if (jugador == 1) {
+                alert("Sacaste ✊")
+            } else if (jugador == 2) {
+                alert("Sacaste 🧻")
+            } else if (jugador == 3) {
+                alert("Sacaste ✂️")
+            } else {
+                alert("Opcion no válida")
+            }
+        }
+
+        function mostrarOpcionSeleccionadaPorPC(pc) {
+            if (pc == 1) {
+                alert("Pc sacó ✊")
+            } else if (pc == 2) {
+                alert("Pc sacó 🧻")
+            } else if (pc == 3) {
+                alert("Pc sacó ✂️")
+            }
+        }
+
+        function mostrarGanador(jugador, pc) {
+            if (jugador == pc) {
+                alert("Empate")
+            } else if (jugador == 1 && pc == 2) {
+                alert("Gana PC")
+            } else if (jugador == 3 && pc == 1) {
+                alert("Gana PC")
+            } else if (jugador == 3 && pc == 2) {
+                alert("Ganaste")
+            }
+
+            if (pc == 1 && jugador == 2) {
+                alert("Ganaste")
+            } else if (pc == 3 && jugador == 1) {
+                alert("Ganaste")
+            } else if (pc == 3 && jugador == 2) {
+                alert("Gana PC")
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <h1>Piedra (✊) , Papel (🧻) o Tijera (✂️)</h1>
+    <button type="button" onclick="jugar();">Jugar Ahora 🎮</button>
+</body>
+
+</html>
